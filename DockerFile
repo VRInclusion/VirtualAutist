@@ -1,0 +1,4 @@
+FROM openjdk:17
+MAINTAINER baeldung.com
+COPY build/libs/configurations.jar  configurations.jar
+ENTRYPOINT ["java","-jar","configurations.jar"]

@@ -1,0 +1,21 @@
+server:
+  port: 8081
+  ssl:
+    enabled: false
+
+spring:
+  application:
+    name: autism-configurations
+  datasource:
+    url: jdbc:postgresql://db:5432/autism
+    username: autism
+    password: autism
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    locations: classpath:/db/migration
+    default-schema: autism_vr
+
+logging:
+  level:
+    org.flywaydb: DEBUG

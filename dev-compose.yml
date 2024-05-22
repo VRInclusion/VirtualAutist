@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres:latest
+    container_name: db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: autism
+      POSTGRES_USER: autism
+      POSTGRES_DB: autism
+    ports:
+      - "5432:5432"
+
+  application:
+    image: config-autizm-container:latest
+    container_name: config-autizm
+    build:
+      context: .
+      dockerfile: DockerFile
+    ports:
+        - "8081:8081"
+    depends_on:
+        - database
